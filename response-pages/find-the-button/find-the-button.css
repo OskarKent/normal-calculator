@@ -1,0 +1,47 @@
+*::selection{
+	background: aqua;
+}
+
+body {
+	animation: colors 5s infinite;
+	margin: 0px;
+}
+
+h1 {
+	background: black;
+}
+
+button {
+	position: absolute;
+	font-size: 50%;
+	width: 15vw;
+	height: 15vh;
+	cursor: pointer;
+	background: aqua;
+	color: aqua;
+	border: none;
+	animation: colors 5s infinite;
+}
+
+@keyframes colors {
+	0%{
+		background: aqua;
+		color: aqua;
+	}
+	25%{
+		background: red;
+		color: red;
+	}
+	50%{
+		background: yellow;
+		color: yellow;
+	}
+	75%{
+		background: lawngreen;
+		color: lawngreen;
+	}
+	100%{
+		background: aqua;
+		color: aqua;
+	}
+}

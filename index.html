@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="description" content="dude.">
+</head>
+<body>
+	<h1>the perfectly normal calculator</h1>
+	<input id="input" type="text" autocomplete="off" placeholder="enter math problem"></input>
+	<button id="enter">enter</button>
+	<div id="response-resources-div">
+		<audio src="response-resources/train-horn.mp3" id="train-horn">oh no! you can not listen to the train horn sound effect! (your browser may be outdated...)</audio>
+		<video autoplay controls oncontextmenu="return false;" controlsList="nodownload" loop src="response-resources/bananas.mp4" id="bananas" class="hidden">oh no! you can not see the circling bananas! (your browser may be outdated...)</video>
+		<audio src="response-resources/pig.mp3" id="pig">oh no! you can not listen to the pig sound effect! (your browser may be outdated...)</audio>
+		<img src="response-resources/elevator.png" alt="elevator with up and down arrows" width="200" height="200" class="hidden" id="elevator-image">
+		<audio loop src="response-resources/elevator.mp3" id="elevator-music">oh no! you can not listen to the elevator music! (your browser may be outdated...)</audio>
+		<canvas width="350" height="350" id="canvas" class="hidden"></canvas>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
