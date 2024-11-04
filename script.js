@@ -105,7 +105,7 @@ const responses = [
 	}
 ]
 
-const doMath = () => {
+const answer = () => {
 	if (input.value !== "") {
 		let random = Math.floor(Math.random() * responses.length)
 		responses[random]()
@@ -115,4 +115,4 @@ const doMath = () => {
 	}
 }
 
-enter.addEventListener("click", doMath)
+enter.addEventListener("click", answer)
