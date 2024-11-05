@@ -4,12 +4,10 @@ const input = document.getElementById('input');
 const responses = [
 	() => {
 		alert("rainbow party for 5 seconds!")
-		input.style.animation = "input-change 1s infinite"
 		let body = document.querySelector("body");
 		body.style.animation = "input-change 1s infinite"
 		setTimeout(function() {
 			body.style.animation = "none";
-			input.style.animation = "none";
 		}, 5000);
 	},
 	() => {
