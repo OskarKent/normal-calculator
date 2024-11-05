@@ -1,5 +1,4 @@
 body {
-	background: #000000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -8,10 +7,12 @@ body {
 	animation-name: cool-background;
 	animation-duration: 7s;
 	color: aqua;
-	font-size: 20px;
 	height: 100vh;
 	background: linear-gradient(-45deg, red,orange,yellow,green,blue,indigo,violet);
-	background-repeat: no-repeat;
+}
+
+h1 {
+	font-size: 250%;
 }
 
 button {
@@ -30,7 +31,7 @@ button {
 	animation-name: cool-background;
 	animation-duration: 7s;
 	animation-fill-mode: forwards;
-	font-size: 150%;
+	font-size: 200%;
 	font-family: cursive, fantasy, sans-serif;
 	text-align: center;
 	height: 50px;

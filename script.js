@@ -117,6 +117,21 @@ const responses = [
 				alert("There was an error with the minigame. Try checking your redirect and pop-up settings.")
 			}
 		}, 20000);
+	},
+	() => {
+		alert("grow!")
+		let h1 = document.querySelector("h1");
+		let num = 100
+		let maybe = false;
+		setInterval(function() {
+			if (parseInt(h1.style.fontSize) >=	700) {
+				h1.style.fontSize = "250%"
+				maybe = true;
+			} else if (maybe !== true) {
+				num+=1;
+				h1.style.fontSize = `${num}` + "%"
+			}
+		}, 10);
 	}
 ]
 
