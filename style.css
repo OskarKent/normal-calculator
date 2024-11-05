@@ -5,10 +5,13 @@ body {
 	align-items: center;
 	margin: 0px;
 	flex-direction: column;
-	animation: cool-backgrounds 2s;
-	color: white;
+	animation-name: cool-background;
+	animation-duration: 7s;
+	color: aqua;
 	font-size: 20px;
 	height: 100vh;
+	background: linear-gradient(-45deg, red,orange,yellow,green,blue,indigo,violet);
+	background-repeat: no-repeat;
 }
 
 button {
@@ -22,9 +25,11 @@ button {
 }
 
 #input {
-	color: blue;
-	animation: input-change 5s;
-	background-color: aqua;
+	color: orange;
+	animation: cool-background 7s;
+	animation-name: cool-background;
+	animation-duration: 7s;
+	animation-fill-mode: forwards;
 	font-size: 150%;
 	font-family: cursive, fantasy, sans-serif;
 	text-align: center;
@@ -32,32 +37,60 @@ button {
 	width: 425px;
 }
 
-@keyframes cool-backgrounds {
+@keyframes cool-background {
 	0% {
-		filter: blur(40px);
+		background: black;
+	}
+	14.3% {
+		background: linear-gradient(-45deg, red,black,black,black,black,black,black);
+	}
+	28.6% {
+		background: linear-gradient(-45deg, red,orange,black,black,black,black,black);
+	}
+	42.9% {
+		background: linear-gradient(-45deg, red,orange,yellow,black,black,black,black);
+	}
+	57.2% {
+		background: linear-gradient(-45deg, red,orange,yellow,green, black,black,black);
+	}
+	71.5% {
+		background: linear-gradient(-45deg, red,orange,yellow,green,blue,black,black);
+	}
+	85.8% {
+		background: linear-gradient(-45deg, red,orange,yellow,green,blue,indigo,black);
 	}
 	100%{
-		filter: blur(0px);
+		background: linear-gradient(-45deg, red,orange,yellow,green,blue,indigo,violet);
 	}
 }
 
+
 @keyframes input-change {
 	0%{
-		background: red;
-	}
-	25%{
 		background: black;
-	}
-	50%{
-		background: yellow;
-	}
-	75%{
-		background: blue;
 		transform: rotate(0deg);
 	}
+	14.3%{
+		background: red;
+	}
+	28.6%{
+		background: orange;
+	}
+	42.9%{
+		background: yellow;
+	}
+	57.2% {
+		background: green;
+	}
+	71.5% {
+		background: blue;
+	}
+	85.8% {
+		background: indigo;
+	}
 	100%{
-		background: aqua;
-		transform: rotate(360deg);
+		background: violet;
+		transform: rotate(2880deg);
 	}
 }
 

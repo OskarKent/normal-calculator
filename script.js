@@ -3,14 +3,14 @@ const input = document.getElementById('input');
 
 const responses = [
 	() => {
-		alert("rainbow party for 15 seconds!")
+		alert("rainbow party for 5 seconds!")
 		input.style.animation = "input-change 1s infinite"
 		let body = document.querySelector("body");
 		body.style.animation = "input-change 1s infinite"
 		setTimeout(function() {
 			body.style.animation = "none";
 			input.style.animation = "none";
-		}, 15000);
+		}, 5000);
 	},
 	() => {
 		let trainhorn = document.getElementById('train-horn');
@@ -19,13 +19,17 @@ const responses = [
 		trainhorn.play()
 	},
 	() => {
-		alert("20 seconds of bananas!")
+		alert("bananas!")
 		let bananas = document.getElementById('bananas');
 		bananas.style.display = "block"
+		bananas.play()
+		setTimeout(function() {
+			bananas.style.display = "none"
+		}, 30000);
 	},
 	() => {
 		let pig = document.getElementById('pig');
-		alert("40 seconds of pig sounds!")
+		alert("pig sounds!")
 		pig.volume = 1
 		pig.play()
 	},
@@ -43,6 +47,9 @@ const responses = [
 			elevatorimage.style.left = Math.floor(Math.random() * 100)+"%";
 		}
 		setInterval(randomMove, 500);
+		setTimeout(function() {
+			elevatorimage.style.display = "none";
+		}, 50000);
 	},
 	() => {
 		alert("bouncy ball!")
@@ -72,23 +79,33 @@ const responses = [
 				speedx=ranx;
 			}
 		}
-		setInterval(bounce, 50)
+		setInterval(bounce, 20)
+		setTimeout(function() {
+			canvas.style.display = "none"
+			ctx.clearRect(0,0,canvas.width,canvas.height)
+		}, 30000);
 	},
 	() => {
 		alert("frogs!")
 		let body = document.querySelector('body');
+		body.style.background = "none";
 		body.style.backgroundImage = "url('response-resources/frog.jpg')"
 		body.style.backgroundSize = "20%"
-		body.style.color = "aqua"
+		setTimeout(function() {
+			body.style.background = "linear-gradient(-45deg, red,orange,yellow,green,blue,indigo,violet)"
+		}, 10000);
 	},
 	() => {
 		alert("blurry!")
 		let body = document.querySelector("body")
 		body.style.filter = "blur(5px)"
+		setTimeout(function() {
+			body.style.filter = "blur(0px)"
+		}, 5000);
 	},
 	() => {
 		let currentURL = window.location.href;
-		alert("minigame!")
+		alert("minigame! You will need to find the invisible button and click on it before the tab auto-closes. You will have 20 seconds.")
 		let newtab = window.open(`${currentURL}/response-pages/find-the-button/find-the-button.html` , `_blank`)
 		setTimeout(function() {
 			if (newtab && !newtab.closed && newtab.location.href === `${currentURL}/response-pages/find-the-button/find-the-button.html`) {				
@@ -97,22 +114,36 @@ const responses = [
 				alert("you found the button!")
 				setTimeout(function() {
 					newtab.close()
-				}, 10000);
+				}, 5000);
 			} else {
-				alert("There was an error with the minigame.")
+				alert("There was an error with the minigame. Try checking your redirect and pop-up settings.")
 			}
 		}, 20000);
 	}
 ]
 
 const answer = () => {
-	if (input.value !== "") {
+	if (input.value.length > 0) {
 		let random = Math.floor(Math.random() * responses.length)
 		responses[random]()
 		input.value = "";
 	} else {
-		alert("enter a real math question")
+		alert("Enter some text.")
+	}
+}
+
+const answerClick = (event) => {
+	if (event.code === "Enter" && input.value.length !== 0) {
+		let random = Math.floor(Math.random() * responses.length)
+		responses[random]()
+		input.value = "";
+	} else if (event.key === "Enter" && input.value.length === 0) {
+		alert("Enter some text.")
 	}
 }
 
 enter.addEventListener("click", answer)
+input.addEventListener("keydown", answerClick)
+
+
+
