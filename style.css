@@ -5,7 +5,7 @@ body {
 	margin: 0px;
 	flex-direction: column;
 	animation-name: cool-background;
-	animation-duration: 7s;
+	animation-duration: 1s;
 	color: aqua;
 	height: 100vh;
 	background: linear-gradient(-45deg, red,orange,yellow,green,blue,indigo,violet);
@@ -29,7 +29,7 @@ button {
 	color: orange;
 	animation: cool-background 7s;
 	animation-name: cool-background;
-	animation-duration: 7s;
+	animation-duration: 1s;
 	animation-fill-mode: forwards;
 	font-size: 200%;
 	font-family: cursive, fantasy, sans-serif;
